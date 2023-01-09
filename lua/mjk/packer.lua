@@ -7,14 +7,17 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  }
+
+  -- Themes
+  use {'folke/tokyonight.nvim'}
+  use ('catppuccin/nvim', {as = "catppuccin"})
+  use {'ayu-theme/ayu-vim'}
+  use ('tomasiser/vim-code-dark')
 
   use {
-	  'folke/tokyonight.nvim' 
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -41,5 +44,39 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
+
+  use {'nvim-lualine/lualine.nvim'}
+  use {
+    'folke/trouble.nvim',
+    requires = "kyazdani42/nvim-web-devicons"
+  }
+  use {'romgrk/barbar.nvim'}
+  use {'Yggdroot/indentLine'}
+  use {'petertriho/nvim-scrollbar'}
+  use {'utilyre/barbecue.nvim', 
+    requires = {
+      "neovim/nvim-lspconfig",
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    }
+}
+  use {'RRethy/vim-illuminate'}
+  use {'mhinz/vim-startify'}
+  use {
+    'sudormrfbin/cheatsheet.nvim',
+
+    requires = {
+      {'nvim-telescope/telescope.nvim'},
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+    }
+  }
+  use {'rcarriga/nvim-notify'}
+
+  use {
+    "folke/which-key.nvim"
+  }
+
+
 
 end)

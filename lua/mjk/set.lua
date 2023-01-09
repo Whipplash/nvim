@@ -14,3 +14,4 @@ vim.opt.guicursor = ""
 vim.opt.scrolloff = 10
 vim.opt.colorcolumn = "120"
 vim.opt.signcolumn = "yes"
+vim.notify = require("notify")
