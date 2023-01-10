@@ -9,10 +9,16 @@ return require('packer').startup(function(use)
 
 
   -- Themes
-  use {'folke/tokyonight.nvim'}
-  use ('catppuccin/nvim', {as = "catppuccin"})
-  use {'ayu-theme/ayu-vim'}
-  use ('tomasiser/vim-code-dark')
+  -- use ('catppuccin/nvim', {as = "catppuccin"})
+  -- use {'ayu-theme/ayu-vim'}
+  -- use ('tomasiser/vim-code-dark')
+  use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    config = function()
+      vim.cmd('colorscheme rose-pine')
+    end
+  })
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -50,7 +56,6 @@ return require('packer').startup(function(use)
     'folke/trouble.nvim',
     requires = "kyazdani42/nvim-web-devicons"
   }
-  use {'romgrk/barbar.nvim'}
   use {'Yggdroot/indentLine'}
   use {'petertriho/nvim-scrollbar'}
   use {'utilyre/barbecue.nvim', 
@@ -77,6 +82,7 @@ return require('packer').startup(function(use)
     "folke/which-key.nvim"
   }
 
-
+  -- using packer.nvim
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
 end)
