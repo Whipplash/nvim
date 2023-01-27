@@ -19,6 +19,9 @@ return require('packer').startup(function(use)
       vim.cmd('colorscheme rose-pine')
     end
   })
+  use 'Yazeed1s/oh-lucy.nvim'
+  use 'kvrohit/mellow.nvim'
+  use 'tanvirtin/monokai.nvim'
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
