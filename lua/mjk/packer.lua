@@ -84,6 +84,7 @@ return require('packer').startup(function(use)
   use {
     "folke/which-key.nvim"
   }
+  use {'JASONews/glow-hover'}
 
   -- using packer.nvim
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
