@@ -1,15 +1,12 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-
   -- Themes
-  use({
-    'rose-pine/neovim',
+  use({'rose-pine/neovim',
     as = 'rose-pine',
     config = function()
       vim.cmd('colorscheme rose-pine')
@@ -50,8 +47,7 @@ return require('packer').startup(function(use)
   }
 
   use {'nvim-lualine/lualine.nvim'}
-  use {
-    'folke/trouble.nvim',
+  use {'folke/trouble.nvim',
     requires = "kyazdani42/nvim-web-devicons"
   }
   use {'Yggdroot/indentLine'}
@@ -65,24 +61,19 @@ return require('packer').startup(function(use)
   }
   use {'RRethy/vim-illuminate'}
   use {'mhinz/vim-startify'}
-  use {
-    'sudormrfbin/cheatsheet.nvim',
+  use {'sudormrfbin/cheatsheet.nvim',
     requires = {
-      {'nvim-telescope/telescope.nvim'},
+      {'knvim-telescope/telescope.nvim'},
       {'nvim-lua/popup.nvim'},
       {'nvim-lua/plenary.nvim'},
     }
   }
   use {'rcarriga/nvim-notify'}
   use {'folke/which-key.nvim'}
-  use {
-    "folke/which-key.nvim"
-  }
   use {'JASONews/glow-hover'}
 
   -- using packer.nvim
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-
   use('MunifTanjim/prettier.nvim')
     use {
     'jose-elias-alvarez/null-ls.nvim',
