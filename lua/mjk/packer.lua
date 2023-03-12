@@ -2,16 +2,12 @@
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
 
   -- Themes
-  -- use ('catppuccin/nvim', {as = "catppuccin"})
-  -- use {'ayu-theme/ayu-vim'}
-  -- use ('tomasiser/vim-code-dark')
   use({
     'rose-pine/neovim',
     as = 'rose-pine',
@@ -22,13 +18,12 @@ return require('packer').startup(function(use)
   use 'Yazeed1s/oh-lucy.nvim'
   use 'kvrohit/mellow.nvim'
   use 'tanvirtin/monokai.nvim'
+  use 'KoBruhh/tranquil-nvim'
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   
   use {
@@ -67,12 +62,11 @@ return require('packer').startup(function(use)
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons", -- optional dependency
     }
-}
+  }
   use {'RRethy/vim-illuminate'}
   use {'mhinz/vim-startify'}
   use {
     'sudormrfbin/cheatsheet.nvim',
-
     requires = {
       {'nvim-telescope/telescope.nvim'},
       {'nvim-lua/popup.nvim'},
@@ -80,12 +74,17 @@ return require('packer').startup(function(use)
     }
   }
   use {'rcarriga/nvim-notify'}
-
-  use {
-    "folke/which-key.nvim"
-  }
+  use {'folke/which-key.nvim'}
 
   -- using packer.nvim
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+
+  use('MunifTanjim/prettier.nvim')
+    use {
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+    }
+  }
 
 end)

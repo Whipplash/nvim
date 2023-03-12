@@ -16,7 +16,7 @@ vim.opt.colorcolumn = "120"
 vim.opt.signcolumn = "yes"
 vim.notify = require("notify")
 vim.opt.termguicolors = true
-vim.cmd 'autocmd BufRead,BufNewFile *.yml set filetype=yaml.ansible'
+-- vim.cmd 'autocmd BufRead,BufNewFile *.yml set filetype=yaml.ansible'
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once
 vim.o.updatetime = 250
