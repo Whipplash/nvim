@@ -72,7 +72,6 @@ return require('packer').startup(function(use)
   use {'folke/which-key.nvim'}
   use {'JASONews/glow-hover'}
 
-  -- using packer.nvim
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   use('MunifTanjim/prettier.nvim')
     use {
@@ -81,5 +80,15 @@ return require('packer').startup(function(use)
       {'nvim-lua/plenary.nvim'},
     }
   }
+
+  --  -- install without yarn or npm
+  --  use({"iamcco/markdown-preview.nvim",
+  --      run = function() vim.fn["mkdp#util#install"]() end,
+  --  })
+  --  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  --
+
+  -- Requires Deno installed (binary)
+  use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 
 end)
