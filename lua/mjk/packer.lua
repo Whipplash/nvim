@@ -74,8 +74,7 @@ return require('packer').startup(function(use)
 
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   use('MunifTanjim/prettier.nvim')
-    use {
-    'jose-elias-alvarez/null-ls.nvim',
+  use {'jose-elias-alvarez/null-ls.nvim',
     requires = {
       {'nvim-lua/plenary.nvim'},
     }
@@ -87,7 +86,6 @@ return require('packer').startup(function(use)
   --  })
   --  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
   --
-
   -- Requires Deno installed (binary)
   use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 

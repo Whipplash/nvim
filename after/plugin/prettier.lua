@@ -7,7 +7,7 @@ prettier.setup({
     bracket_spacing = true,
     bracket_same_line = false,
     embedded_language_formatting = "auto",
-    end_of_line = "lf",
+    end_of_line = "crlf",
     html_whitespace_sensitivity = "css",
     -- jsx_bracket_same_line = false,
     jsx_single_quote = false,
