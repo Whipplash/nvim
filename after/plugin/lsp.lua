@@ -5,8 +5,12 @@ lsp.preset('lsp-compe')
 
 lsp.ensure_installed = {
     -- Replace these with whatever servers you want to install
-    'ansible',
-    'bash',
+    'ansible-language-server',
+    'ansible-lint',
+    'yamlfmt',
+    'yamllint',
+    'bash-language-server',
+    'marksman',
     'sumneko_lua',
   }
 
