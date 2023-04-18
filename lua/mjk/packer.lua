@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
   use 'kvrohit/mellow.nvim'
   use 'tanvirtin/monokai.nvim'
   use 'KoBruhh/tranquil-nvim'
+  use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -62,13 +63,6 @@ return require('packer').startup(function(use)
   }
   use {'Yggdroot/indentLine'}
   use {'petertriho/nvim-scrollbar'}
-  use {'utilyre/barbecue.nvim', 
-    requires = {
-      "neovim/nvim-lspconfig",
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    }
-  }
   use {'RRethy/vim-illuminate'}
   use {'mhinz/vim-startify'}
   use {'sudormrfbin/cheatsheet.nvim',
@@ -98,6 +92,7 @@ return require('packer').startup(function(use)
   --
   -- Requires Deno installed (binary)
   use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+  use 'archibate/lualine-time'
 
   if packer_bootstrap then
     require('packer').sync()
