@@ -93,6 +93,13 @@ return require('packer').startup(function(use)
   -- Requires Deno installed (binary)
   use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
   use 'archibate/lualine-time'
+  use {
+      "yorik1984/zola.nvim",
+      requires = {
+          "Glench/Vim-Jinja2-Syntax",
+          "cespare/vim-toml",             -- for Neovim ⩽ 0.6.0
+      }
+  }
 
   if packer_bootstrap then
     require('packer').sync()

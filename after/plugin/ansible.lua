@@ -1,3 +1,3 @@
 require'lspconfig'.ansiblels.setup{
-  filetypes = {"yaml"}
+  filetypes = {"yml","yaml","yaml.ansible"}
 }
