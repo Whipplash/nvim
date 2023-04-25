@@ -52,19 +52,10 @@ require('bufferline').setup {
                 return true
             end
         end,
-
-        offsets = {
-            {
-                filetype = "NvimTree",
-                text = "File Explorer",
-                text_align = "center",
-                separator = true,
-            }
-        },
         color_icons = true, -- whether or not to add the filetype icon highlights
         show_buffer_icons = true, -- disable filetype icons for buffers
         show_buffer_close_icons = true,
-        show_buffer_default_icon = true, -- whether or not an unrecognised filetype should show a default icon
+        get_element_icon = true, -- whether or not an unrecognised filetype should show a default icon
         show_close_icon = true,
         show_tab_indicators = false, 
         show_duplicate_prefix = true, -- whether to show duplicate buffer prefix
@@ -83,3 +74,11 @@ require('bufferline').setup {
       }
 }
 
+
+
+vim.g.transparent_groups = vim.list_extend(
+  vim.g.transparent_groups or {},
+  vim.tbl_map(function(v)
+    return v.hl_group
+  end, vim.tbl_values(require('bufferline.config').highlights))
+)

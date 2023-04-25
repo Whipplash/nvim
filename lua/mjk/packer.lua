@@ -11,6 +11,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+vim.opt.termguicolors = true
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -100,6 +101,7 @@ return require('packer').startup(function(use)
           "cespare/vim-toml",             -- for Neovim ⩽ 0.6.0
       }
   }
+  use {'xiyaowong/transparent.nvim'}
 
   if packer_bootstrap then
     require('packer').sync()

@@ -61,7 +61,7 @@ require('lualine').setup {
         },
         { 'progress',
           icon = { '', align = 'left',},
-          separator = { right = '█', left = { '' } }
+          separator = { right = '', left = { '' } }
         }
       },
     }
