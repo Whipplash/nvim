@@ -1,40 +1,68 @@
 require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
+    options = {
+        disabled_filetypes = { "dashboard" },
+        globalstatus = true,
+        section_separators = { left = ' ', right = ' ' },
+        component_separators = { left = '', right = ''},
+        theme = "auto",
     },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
+    extensions = {
+        "toggleterm",
+        "nvim-tree"
+    },
+    sections = {
+    lualine_a = {
+      { 'mode',
+        icon = { ' ' },
+      },
+    },
+    lualine_b = {'ctime'},
+    lualine_c = {
+      { 'branch',
+        icon = {''},
+        separator = ' ',
+      },
+      { separator = ' ',
+        icon = {''}
+      },
+      { 'diff',
+        colored = true,
+        symbols = {
+          added = ' ',
+          modified = ' ',
+          removed = ' '
+      },
+          diff_color = {}
+      },
+    },
+    lualine_x = {
+      { 'diagnostics',
+        sources = { 'nvim_diagnostic' },
+        separator = '',
+        symbols = {
+          error = ' ',
+          warn = ' ',
+          info = ' ',
+          hint = '󱤅 ',
+          other = '󰠠 ',
+        },
+        diagnostics_color = {},
+        colored = true,
+      },
+    },
+    lualine_y = {
+        { 'filetype',
+          icon = {'🕐', align = 'left',
+          color = { gui = 'bold' }}},
+    },
+    lualine_z = {
+        { 'location',
+          icon = { '', align = 'left',}
+        },
+        { 'progress',
+          icon = { '', align = 'left',},
+          separator = { right = '█', left = { '' } }
+        }
+      },
     }
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename', 'ctime'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
 }
