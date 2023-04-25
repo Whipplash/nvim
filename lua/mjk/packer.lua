@@ -62,7 +62,6 @@ return require('packer').startup(function(use)
   use {'folke/trouble.nvim',
     requires = "kyazdani42/nvim-web-devicons"
   }
-  use {'Yggdroot/indentLine'}
   use {'petertriho/nvim-scrollbar'}
   use {'RRethy/vim-illuminate'}
   use {'mhinz/vim-startify'}
@@ -102,6 +101,7 @@ return require('packer').startup(function(use)
       }
   }
   use {'xiyaowong/transparent.nvim'}
+  use {'lukas-reineke/indent-blankline.nvim'}
 
   if packer_bootstrap then
     require('packer').sync()
