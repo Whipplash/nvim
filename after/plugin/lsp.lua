@@ -29,7 +29,11 @@ local cmp_config = lsp.defaults.cmp_config({
     vim_item.abbr = string.sub(vim_item.abbr, 1, 45)
     return vim_item
   end
-}
+  },
+  mapping = {
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
+  }
 })
 
+--- cmp.setup(cmp_config)
 cmp.setup(cmp_config)
