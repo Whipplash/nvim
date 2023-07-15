@@ -21,8 +21,13 @@ vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 local cmp = require('cmp')
 local cmp_config = lsp.defaults.cmp_config({
   window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered({
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+      -- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PMenuThumb,Search:Error"
+    }),
+    documentation = cmp.config.window.bordered({
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+    }),
   },
   formatting = {
   format = function(entry, vim_item)

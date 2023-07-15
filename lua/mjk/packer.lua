@@ -103,6 +103,8 @@ return require('packer').startup(function(use)
   use {'xiyaowong/transparent.nvim'}
   use {'lukas-reineke/indent-blankline.nvim'}
 
+  use 'm4xshen/hardtime.nvim'
+
   if packer_bootstrap then
     require('packer').sync()
   end
