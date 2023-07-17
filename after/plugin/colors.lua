@@ -1,5 +1,5 @@
 function cs(color)
-	color = color or "github_dark"
+	color = color or "monokai"
 	vim.cmd.colorscheme(color)
 
   -- Transparency - Enabled this for WSL.
