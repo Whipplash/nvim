@@ -11,5 +11,8 @@ vim.opt.listchars:append "space:⋅"
 
 require("indent_blankline").setup {
     show_current_context = true,
-    show_current_context_start = true
+    show_current_context_start = true,
+    strict_tabs = true,
+    buftype_exclude = { 'terminal', 'nofile', 'quickfix' },
+    bufname_exclude = { ' ' }
 }

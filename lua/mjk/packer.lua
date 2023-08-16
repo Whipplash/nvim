@@ -64,7 +64,8 @@ return require('packer').startup(function(use)
   }
   use {'petertriho/nvim-scrollbar'}
   use {'RRethy/vim-illuminate'}
-  use {'mhinz/vim-startify'}
+--   use {'mhinz/vim-startify'}
+  use {'glepnir/dashboard-nvim'}
   use {'sudormrfbin/cheatsheet.nvim',
     requires = {
       {'knvim-telescope/telescope.nvim'},
@@ -75,7 +76,6 @@ return require('packer').startup(function(use)
   use {'rcarriga/nvim-notify'}
   use {'folke/which-key.nvim'}
   use {'JASONews/glow-hover'}
-
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   use('MunifTanjim/prettier.nvim')
   use {'jose-elias-alvarez/null-ls.nvim',
@@ -84,13 +84,6 @@ return require('packer').startup(function(use)
     }
   }
 
-  --  -- install without yarn or npm
-  --  use({"iamcco/markdown-preview.nvim",
-  --      run = function() vim.fn["mkdp#util#install"]() end,
-  --  })
-  --  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-  --
-  -- Requires Deno installed (binary)
   use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
   use 'archibate/lualine-time'
   use {
@@ -102,7 +95,6 @@ return require('packer').startup(function(use)
   }
   use {'xiyaowong/transparent.nvim'}
   use {'lukas-reineke/indent-blankline.nvim'}
-
   use 'm4xshen/hardtime.nvim'
 
   if packer_bootstrap then
