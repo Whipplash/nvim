@@ -9,7 +9,7 @@ vim.cmd [[highlight IndentBlanklineIndent6 guifg=#39c5cf gui=nocombine]]
 vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
 
-require("indent_blankline").setup {
+require("ibl").setup {
     show_current_context = true,
     show_current_context_start = true,
     strict_tabs = true,
